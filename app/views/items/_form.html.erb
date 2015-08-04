@@ -1,0 +1,10 @@
+<div class = "col-md-8 text-center center">
+  <%= form_for [@user, @item] do |f| %>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name , class: 'form-control'%>
+    </p>
+
+    <p><%= f.submit %></p>
+  <% end %>
+</div>

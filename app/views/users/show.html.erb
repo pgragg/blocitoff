@@ -1,1 +1,6 @@
-<%= @user.email %> 
+
+
+<h1> <%= @user.email %>'s Items </h1> 
+<table class = "table"> 
+<%= render @items %> <!-- render partial: 'lunches/lunch_form', locals: {lunch: @daily_lunch }  -->
+</table>

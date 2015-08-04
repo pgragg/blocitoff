@@ -7,22 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="user_nav">
-  <% if current_user %>
-    Logged in as <%= current_user.email %>.
-    <%= link_to "Log out", log_out_path %>
-    <%= link_to "Edit account", edit_user_path(current_user) %>
-  <% else %>
-    <%= link_to "Sign up", sign_up_path %> or
-    <%= link_to "log in", log_in_path %>
-  <% end %>
+  <div id="container center text-center">
+    <div id="user_nav">
+    <% if current_user %>
+      Logged in as <%= current_user.email %>.
+      <%= link_to "Log out", log_out_path %>
+      <%= link_to "Edit account", edit_user_path(current_user) %>
+    <% else %>
+      <%= link_to "Sign up", sign_up_path %> or
+      <%= link_to "log in", log_in_path %>
+    <% end %>
+    </div>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+
+    <%= yield %>
   </div>
-
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %>
-
-  <%= yield %>
-
 </body>
 </html>
