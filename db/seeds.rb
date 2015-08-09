@@ -11,28 +11,12 @@ require 'faker'
 User.delete_all
 Item.delete_all
 
-10.times do 
+10.times do |i|
   User.create(email: Faker::Internet.email, password: "password")
 end
 
 users = User.all 
 
-100.times {users.sample.items.create(name: Faker::Commerce.product_name)}
-
-
-# create_table "items", force: :cascade do |t|
-#     t.string   "name"
-#     t.integer  "user_id"
-#     t.datetime "created_at", null: false
-#     t.datetime "updated_at", null: false
-#   end
-
-#   add_index "items", ["user_id"], name: "index_items_on_user_id"
-
-#   create_table "users", force: :cascade do |t|
-#     t.string   "email"
-#     t.string   "password_hash"
-#     t.string   "password_salt"
-#     t.datetime "created_at",    null: false
-#     t.datetime "updated_at",    null: false
-#   end
+100.times do |i|
+  users.sample.items.create(name: Faker::Commerce.product_name, created_at: DateTime.now - ([1,2,3,4,5,6].sample))
+end 
