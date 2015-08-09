@@ -13,6 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'faker'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'whenever', :require => false #Runs jobs in the background on schedule. 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
