@@ -1,1 +1,1 @@
-<tr> <th>  <%= item.name %> </th> <td> <%=item.created_at%></td>  </tr> 
+<tr> <th>  <%= item.name %> </th> <td> <%=item.created_at%></td>  <td> <%= link_to "", user_item_path(current_user, item), method: :delete, class: 'glyphicon glyphicon-ok delete_row', remote: true%></td></tr> 
